@@ -1,4 +1,4 @@
-// fixtures/baseFixture.ts
+// fixtures.ts
 import { test as base } from "@playwright/test";
 import { TodoPage } from "../page-objects/TodoPage";
 
