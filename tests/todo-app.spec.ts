@@ -2,7 +2,7 @@ import { goToTodoApp } from "../utils/navigation";
 import { test } from "../tests/fixtures";
 import todoData from "../test-data/todo-test-data.json";
 
-test.describe("Positive tests for new todo items", { tag: ['@positive'] }, () => {
+test.describe("Positive tests for new todo items", { tag: ['@positive', '@smoke'] }, () => {
   test.beforeEach(async ({ page, todoPage }) => {
     await goToTodoApp(page);
     await test.step("Add initial todo item", async () => {
@@ -34,7 +34,7 @@ test.describe("Positive tests for new todo items", { tag: ['@positive'] }, () =>
   });
 });
 
-test.describe("Negative cases - Todo App", { tag: ['@negative'] }, () => {
+test.describe("Negative cases - Todo App", { tag: ['@negative', '@regression'] }, () => {
   test.beforeEach(async ({ page }) => {
     await goToTodoApp(page);
   });
