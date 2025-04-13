@@ -20,6 +20,7 @@ While this demo focuses on the [TodoMVC Angular App](https://todomvc.com/example
 - ✅ Tag-based test filtering (`@positive`, `@negative`, `@regression`, `@smoke`)
 - ✅ Playwright HTML Reports, screenshots & video on failure
 - ✅ Extensible for API testing, Excel-driven data, PDF handling, and CI/CD integration
+- ✅ Test run integration with Qase (CaseIO)
 
 ---
 
@@ -84,6 +85,34 @@ npx playwright test --grep='@negative'
 npx playwright test --grep='@smoke'
 npx playwright test --grep='@regression'
 ```
+
+---
+
+## 📦 Qase (CaseIO) Integration
+
+This project integrates with [Qase.io](https://qase.io) to log automated test results.
+
+### 🔹 Qase Setup
+
+1. Install the reporter:
+```bash
+npm install playwright-qase-reporter
+```
+
+2. Create a `.env` file and add:
+```
+QASE_TOKEN=your-qase-api-token
+QASE_PROJECT=YOUR_PROJECT_CODE
+```
+
+3. Reporter is already configured in `playwright.config.ts`. When you run:
+```bash
+npx playwright test
+```
+
+✅ A new test run will be created in Qase with results uploaded automatically.
+
+> Note: Tests can be linked to Qase cases using `@QASE_ID=123` in test names, but it's optional.
 
 ---
 
